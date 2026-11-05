@@ -3,6 +3,8 @@ import Login from "./pages/Login";
 import FaceRegistration from "./pages/FaceRegistration";
 import FaceVerification from "./pages/FaceVerification";
 import Register from "./pages/Register";
+import EmployeeDashboard from "./pages/EmployeeDashboard";
+
 
 const router = createBrowserRouter([
   {
