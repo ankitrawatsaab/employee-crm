@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Login";
 import FaceRegistration from "./components/FaceRegistration";
 import FaceVerification from "./components/FaceVerification";
+import Register from "./pages/Register";
 
 const router = createBrowserRouter([
   {
