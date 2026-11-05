@@ -9,6 +9,10 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: "/register",
+    element: <Register />,
+  },
+  {
     path: "/face-registration",
     element: <FaceRegistration />,
   },

@@ -31,7 +31,7 @@ const Register = () => {
         dispatch(setLoading(true));
 
         try {
-            const res = await axios.post("https://employee-crm-dpa9.onrender.com/api/v1/employee/register",
+            const res = await axios.post("https://employee-crm-dpa9.onrender.com/api/v1/auth/register",
                 input, {
                 headers: {
                     "Content-Type": "application/json",
@@ -210,7 +210,7 @@ const Register = () => {
                 <p className="mt-5 text-center text-gray-600">
                     Already registered?{" "}
                     <Link
-                        to="/https://employee-crm-dpa9.onrender.com/api/v1/employee/login"
+                        to="/https://employee-crm-dpa9.onrender.com/login"
                         className="font-semibold text-blue-600 hover:underline"
                     >
                         Login
