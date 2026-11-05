@@ -9,10 +9,13 @@ import attendanceRoute from "./routes/attendance.route.js";
 import leaveRoute from "./routes/leave.route.js";  
 import dashboardRoute from "./routes/dashboard.routes.js"; 
 import faceRoute from "./routes/face.routes.js";
+import path from "path";
 
 dotenv.config({});
 
 const app = express();
+
+const __dirname = path.resolve();
 
 // middleware
 app.use(express.json());
@@ -35,6 +38,11 @@ app.use("/api/v1/attendance", attendanceRoute);
 app.use("/api/v1/leave", leaveRoute);
 app.use("/api/v1/dashboard", dashboardRoute);
 app.use("/api/v1/face", faceRoute);
+
+app.use(express.static(path.join(__dirname, "frontend/dist")));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+});
 
 app.listen(PORT,()=>{
     connectDB();
