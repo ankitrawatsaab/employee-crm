@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import toast from "sonner";
+import {toast} from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../redux/authSlice.js";
 
