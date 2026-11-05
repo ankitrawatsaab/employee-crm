@@ -146,7 +146,7 @@ const Register = () => {
                             <input
                                 name="phone"
                                 value={input.phone}
-                                onChange={handleChange}
+                                onChange={changeEventHandler}
                                 placeholder="Enter phone number"
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
@@ -160,7 +160,7 @@ const Register = () => {
                             <input
                                 name="department"
                                 value={input.department}
-                                onChange={handleChange}
+                                onChange={changeEventHandler}
                                 placeholder="IT, HR, Sales..."
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
