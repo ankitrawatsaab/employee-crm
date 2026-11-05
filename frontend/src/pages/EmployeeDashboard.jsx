@@ -1,3 +1,7 @@
+
+import { useState } from "react";
+import { Menu } from "lucide-react";
+
 import DashboardSidebar from "../components/Dashboard/DashboardSidebar";
 import DashboardHeader from "../components/Dashboard/DashboardHeader";
 import AttendanceSummary from "../components/Dashboard/AttendanceSummary";
@@ -8,19 +12,38 @@ import RecentLeaves from "../components/Dashboard/RecentLeaves";
 import { dashboardData } from "../data/dashboardData";
 
 const EmployeeDashboard = () => {
-  const { employee, stats, todayAttendance, recentAttendance, recentLeaves } =
-    dashboardData;
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const {
+    employee,
+    stats,
+    todayAttendance,
+    recentAttendance,
+    recentLeaves,
+  } = dashboardData;
 
   return (
     <div className="flex min-h-screen bg-gray-50">
 
-      {/* Sidebar */}
-      <DashboardSidebar />
+      {/* Responsive Sidebar */}
+      <DashboardSidebar
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+      />
 
       {/* Main Content */}
-      <main className="min-w-0 flex-1 p-5 sm:p-8">
+      <main className="min-w-0 flex-1 p-4 sm:p-6 lg:p-8">
 
-        <div className="mx-auto max-w-7xl space-y-8">
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileOpen(true)}
+          className="mb-5 flex items-center justify-center rounded-lg border border-gray-200 bg-white p-2.5 text-gray-700 shadow-sm md:hidden"
+          aria-label="Open navigation menu"
+        >
+          <Menu size={22} />
+        </button>
+
+        <div className="mx-auto max-w-7xl space-y-6 sm:space-y-8">
 
           {/* Header */}
           <DashboardHeader employee={employee} />
