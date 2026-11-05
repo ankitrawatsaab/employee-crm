@@ -33,7 +33,7 @@ const DashboardHeader = ({ employee }) => {
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         {/* Notification */}
         <button className="relative rounded-xl border border-gray-200 bg-white p-3 text-gray-600 transition hover:bg-gray-50">
           <Bell size={20} />

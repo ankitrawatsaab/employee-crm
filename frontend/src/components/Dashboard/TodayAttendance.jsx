@@ -6,9 +6,9 @@ const TodayAttendance = ({ attendance }) => {
   const isPunchedOut = Boolean(attendance?.punchOut);
 
   return (
-    <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+    <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm sm:p-6">
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-5 flex items-start justify-between gap-3 sm:mb-6">
         <div>
           <h2 className="text-lg font-semibold text-gray-900">
             Today's Attendance
@@ -79,7 +79,7 @@ const TodayAttendance = ({ attendance }) => {
         {!isPunchedIn && (
           <button
             disabled
-            className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-medium text-white opacity-70"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-medium text-white opacity-70 sm:w-auto"
           >
             <LogIn size={18} />
             Punch In (Coming Soon)
@@ -89,7 +89,7 @@ const TodayAttendance = ({ attendance }) => {
         {isPunchedIn && !isPunchedOut && (
           <button
             disabled
-            className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-5 py-3 text-sm font-medium text-white opacity-70"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-orange-500 px-5 py-3 text-sm font-medium text-white opacity-70 sm:w-auto"
           >
             <LogOut size={18} />
             Punch Out (Coming Soon)
