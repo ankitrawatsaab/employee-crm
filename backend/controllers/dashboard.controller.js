@@ -1,4 +1,3 @@
-
 import { Employee } from "../models/employee.model.js";
 import { Attendance } from "../models/attendance.model.js";
 import { Leave } from "../models/leave.model.js";

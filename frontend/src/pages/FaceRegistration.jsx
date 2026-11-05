@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { loadFaceModels, getFaceDescriptor } from "../utils/faceUtils";
+import { FACE_API_END_POINT } from "../utils/constant.js";
 
 const FaceRegistration = () => {
   const videoRef = useRef(null);
@@ -54,7 +55,7 @@ const FaceRegistration = () => {
       }
 
       const response = await fetch(
-        "https://employee-crm-dpa9.onrender.com/api/v1/face/register",
+        `${FACE_API_END_POINT}/register`,
         {
           method: "POST",
           headers: {

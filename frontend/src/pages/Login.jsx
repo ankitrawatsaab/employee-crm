@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setUser } from "../redux/authSlice.js";
+import { AUTH_API_END_POINT } from "../utils/constant.js";
+
 
 const Login = () => {
     const [input, setInput] = useState({
@@ -26,7 +28,7 @@ const Login = () => {
         try {
             dispatch(setLoading(true));
 
-            const res = await axios.post("https://employee-crm-dpa9.onrender.com/api/v1/auth/login", input, {
+            const res = await axios.post(`${AUTH_API_END_POINT}/login`, input, {
                 headers: {
                     "Content-Type": "application/json",
                 },

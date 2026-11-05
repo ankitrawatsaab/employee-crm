@@ -1,26 +1,30 @@
-
 import { useState } from "react";
 import { Menu } from "lucide-react";
-
 import DashboardSidebar from "../components/Dashboard/DashboardSidebar";
 import DashboardHeader from "../components/Dashboard/DashboardHeader";
 import AttendanceSummary from "../components/Dashboard/AttendanceSummary";
 import TodayAttendance from "../components/Dashboard/TodayAttendance";
 import RecentAttendance from "../components/Dashboard/RecentAttendance";
 import RecentLeaves from "../components/Dashboard/RecentLeaves";
-
-import { dashboardData } from "../data/dashboardData";
+import { useSelector } from "react-redux";
+import useGetEmployeeDashboard from "../hooks/useGetEmployeeDashboard";
 
 const EmployeeDashboard = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const {
-    employee,
-    stats,
-    todayAttendance,
-    recentAttendance,
-    recentLeaves,
-  } = dashboardData;
+  // API fetch
+  useGetEmployeeDashboard();
+
+  const { employeeDashboard } = useSelector((state) => state.employeeDashboard);
+
+  const dashboard = employeeDashboard;
+
+  const employee = dashboard?.employee;
+  const todayAttendance = dashboard?.todayAttendance;
+  const recentAttendance = dashboard?.recentAttendance;
+  const recentLeaves = dashboard?.recentLeaves;
+  const stats = dashboard?.stats;
+
 
   return (
     <div className="flex min-h-screen bg-gray-50">

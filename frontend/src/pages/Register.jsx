@@ -4,6 +4,8 @@ import axios from "axios";
 import {toast} from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../redux/authSlice.js";
+import { EMPLOYEE_API_END_POINT } from "../utils/constant.js";
+
 
 const Register = () => {
     const navigate = useNavigate();
@@ -31,7 +33,7 @@ const Register = () => {
         dispatch(setLoading(true));
 
         try {
-            const res = await axios.post("https://employee-crm-dpa9.onrender.com/api/v1/employee/register",
+            const res = await axios.post(`${EMPLOYEE_API_END_POINT}/register`,
                 input, {
                 headers: {
                     "Content-Type": "application/json",
@@ -53,7 +55,7 @@ const Register = () => {
                     joiningDate: "",
                 });
 
-                navigate("https://employee-crm-dpa9.onrender.com/api/v1/employee/login");
+                navigate("/login");
             }
         } catch (error) {
             console.error("Employee registration error:", error);

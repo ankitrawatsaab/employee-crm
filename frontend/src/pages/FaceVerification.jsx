@@ -48,7 +48,7 @@ const FaceVerification = () => {
         return;
       }
 
-      const { data } = await axios.post("https://employee-crm-dpa9.onrender.com/api/v1/face/verify", {
+      const { data } = await axios.post(`${FACE_API_END_POINT}/verify`, {
         faceDescriptor,
       });
 
