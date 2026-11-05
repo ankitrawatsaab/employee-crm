@@ -88,7 +88,7 @@ const Register = () => {
                             <input
                                 name="name"
                                 value={input.name}
-                                onChange={handleChange}
+                                onChange={changeEventHandler}
                                 placeholder="Enter full name"
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
@@ -102,7 +102,7 @@ const Register = () => {
                             <input
                                 name="employeeCode"
                                 value={input.employeeCode}
-                                onChange={handleChange}
+                                onChange={changeEventHandler}
                                 placeholder="EMP001"
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
@@ -117,7 +117,7 @@ const Register = () => {
                                 type="email"
                                 name="email"
                                 value={input.email}
-                                onChange={handleChange}
+                                onChange={changeEventHandler}
                                 placeholder="Enter email"
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
@@ -132,7 +132,7 @@ const Register = () => {
                                 type="password"
                                 name="password"
                                 value={input.password}
-                                onChange={handleChange}
+                                onChange={changeEventHandler}
                                 placeholder="Enter password"
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
@@ -174,7 +174,7 @@ const Register = () => {
                             <input
                                 name="designation"
                                 value={input.designation}
-                                onChange={handleChange}
+                                onChange={changeEventHandler}
                                 placeholder="Software Developer"
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
@@ -189,7 +189,7 @@ const Register = () => {
                                 type="date"
                                 name="joiningDate"
                                 value={input.joiningDate}
-                                onChange={handleChange}
+                                onChange={changeEventHandler}
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
                             />
