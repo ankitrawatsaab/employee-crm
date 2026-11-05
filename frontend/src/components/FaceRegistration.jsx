@@ -54,7 +54,7 @@ const FaceRegistration = () => {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/v1/face/register",
+         "https://employee-crm-dpa9.onrender.com/api/v1/face/register",
         {
           method: "POST",
           headers: {

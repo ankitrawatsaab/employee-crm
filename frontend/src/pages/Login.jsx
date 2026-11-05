@@ -26,7 +26,7 @@ const Login = () => {
         try {
             dispatch(setLoading(true));
 
-            const res = await axios.post("http://localhost:5000/api/v1/auth/login", input, {
+            const res = await axios.post("https://employee-crm-dpa9.onrender.com/api/v1/auth/login", input, {
                 headers: {
                     "Content-Type": "application/json",
                 },
