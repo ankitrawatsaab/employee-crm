@@ -18,7 +18,7 @@ const RecentLeaves = ({ leaves = [] }) => {
   return (
     <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-gray-100 p-5">
+      <div className="flex items-center justify-between gap-3 border-b border-gray-100 p-4 sm:p-5">
         <div>
           <h2 className="text-lg font-semibold text-gray-900">
             Recent Leaves
@@ -37,7 +37,7 @@ const RecentLeaves = ({ leaves = [] }) => {
           leaves.map((leave) => (
             <div
               key={leave.id}
-              className="flex flex-col justify-between gap-3 p-5 transition hover:bg-gray-50 sm:flex-row sm:items-center"
+              className="flex flex-col justify-between gap-3 p-4 transition hover:bg-gray-50 sm:flex-row sm:items-center sm:p-5"
             >
               <div>
                 <h3 className="text-sm font-semibold text-gray-900">
