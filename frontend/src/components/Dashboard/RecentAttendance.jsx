@@ -18,7 +18,7 @@ const RecentAttendance = ({ records = [] }) => {
   return (
     <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-gray-100 p-5">
+      <div className="flex items-center justify-between gap-3 border-b border-gray-100 p-4 sm:p-5">
         <div>
           <h2 className="text-lg font-semibold text-gray-900">
             Recent Attendance
@@ -36,16 +36,16 @@ const RecentAttendance = ({ records = [] }) => {
         <table className="w-full min-w-[600px] text-left">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-5 py-3 text-xs font-semibold uppercase text-gray-500">
+              <th className="whitespace-nowrap px-4 py-3 text-xs font-semibold uppercase text-gray-500 sm:px-5">
                 Date
               </th>
-              <th className="px-5 py-3 text-xs font-semibold uppercase text-gray-500">
+              <th className="whitespace-nowrap px-4 py-3 text-xs font-semibold uppercase text-gray-500 sm:px-5">
                 Punch In
               </th>
-              <th className="px-5 py-3 text-xs font-semibold uppercase text-gray-500">
+              <th className="whitespace-nowrap px-4 py-3 text-xs font-semibold uppercase text-gray-500 sm:px-5">
                 Punch Out
               </th>
-              <th className="px-5 py-3 text-xs font-semibold uppercase text-gray-500">
+              <th className="whitespace-nowrap px-4 py-3 text-xs font-semibold uppercase text-gray-500 sm:px-5">
                 Status
               </th>
             </tr>
@@ -55,22 +55,22 @@ const RecentAttendance = ({ records = [] }) => {
             {records.length > 0 ? (
               records.map((record) => (
                 <tr key={record.id} className="transition hover:bg-gray-50">
-                  <td className="px-5 py-4 text-sm font-medium text-gray-900">
+                  <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-600 sm:px-5">
                     {record.date}
                   </td>
 
-                  <td className="px-5 py-4 text-sm text-gray-600">
+                  <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-600 sm:px-5">
                     <span className="flex items-center gap-2">
                       <Clock size={15} className="text-gray-400" />
                       {record.punchIn}
                     </span>
                   </td>
 
-                  <td className="px-5 py-4 text-sm text-gray-600">
+                  <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-600 sm:px-5">
                     {record.punchOut}
                   </td>
 
-                  <td className="px-5 py-4">
+                  <td className="whitespace-nowrap px-4 py-4 sm:px-5">
                     <span
                       className={`rounded-full px-3 py-1 text-xs font-medium ${getStatusStyle(
                         record.status
@@ -85,7 +85,7 @@ const RecentAttendance = ({ records = [] }) => {
               <tr>
                 <td
                   colSpan="4"
-                  className="px-5 py-10 text-center text-sm text-gray-500"
+                  className="whitespace-nowrap px-4 py-10 text-center text-sm text-gray-500 sm:px-5"
                 >
                   No attendance records found.
                 </td>
