@@ -40,8 +40,9 @@ app.use("/api/v1/dashboard", dashboardRoute);
 app.use("/api/v1/face", faceRoute);
 
 app.use(express.static(path.join(__dirname, "frontend/dist")));
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+
+app.get("/{*splat}", (req, res) => {
+  res.sendFile(path.resolve("frontend", "dist", "index.html"));
 });
 
 app.listen(PORT,()=>{
