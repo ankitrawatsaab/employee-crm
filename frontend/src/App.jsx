@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Login";
-import FaceRegistration from "./components/FaceRegistration";
-import FaceVerification from "./components/FaceVerification";
+import FaceRegistration from "./pages/FaceRegistration";
+import FaceVerification from "./pages/FaceVerification";
 import Register from "./pages/Register";
 
 const router = createBrowserRouter([
@@ -18,9 +18,13 @@ const router = createBrowserRouter([
     element: <FaceRegistration />,
   },
   {
-  path: "/face-verification",
-  element: <FaceVerification />,
-}
+    path: "/face-verification",
+    element: <FaceVerification />,
+  },
+  {
+    path: "/face-verification",
+    element: <FaceVerification />,
+  }
 ]);
 
 

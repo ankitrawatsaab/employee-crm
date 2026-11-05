@@ -37,7 +37,7 @@ const Login = () => {
             if (res.data.success) {
                 dispatch(setUser(res.data.user));
                 toast.success(res.data.message || "Login successful!");
-                navigate("/");
+                navigate("/employee/dashboard");
             } else {
                 toast.error(res.data.message || "Unable to login.");
             }
