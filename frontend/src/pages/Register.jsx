@@ -210,7 +210,7 @@ const Register = () => {
                 <p className="mt-5 text-center text-gray-600">
                     Already registered?{" "}
                     <Link
-                        to="/https://employee-crm-dpa9.onrender.com/login"
+                        to="/login"
                         className="font-semibold text-blue-600 hover:underline"
                     >
                         Login
