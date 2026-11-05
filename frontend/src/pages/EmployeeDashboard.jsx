@@ -1,10 +1,9 @@
-
-import DashboardSidebar from "../components/dashboard/DashboardSidebar";
-import DashboardHeader from "../components/dashboard/DashboardHeader";
-import AttendanceSummary from "../components/dashboard/AttendanceSummary";
-import TodayAttendance from "../components/dashboard/TodayAttendance";
-import RecentAttendance from "../components/dashboard/RecentAttendance";
-import RecentLeaves from "../components/dashboard/RecentLeaves";
+import DashboardSidebar from "../components/Dashboard/DashboardSidebar";
+import DashboardHeader from "../components/Dashboard/DashboardHeader";
+import AttendanceSummary from "../components/Dashboard/AttendanceSummary";
+import TodayAttendance from "../components/Dashboard/TodayAttendance";
+import RecentAttendance from "../components/Dashboard/RecentAttendance";
+import RecentLeaves from "../components/Dashboard/RecentLeaves";
 
 import { dashboardData } from "../data/dashboardData";
 
