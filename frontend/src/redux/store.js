@@ -1,4 +1,3 @@
-
 import {
   persistReducer,
   persistStore,
@@ -11,9 +10,6 @@ import {
 } from "redux-persist";
 
 import authSlice from "./authSlice.js";
-import employeeDashboardSlice from "./employeeDashboardSlice.js";
-import attendanceSlice from "./attendanceSlice.js";
-
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 // Custom localStorage adapter
@@ -27,8 +23,6 @@ const storage = {
 
 const rootReducer = combineReducers({
   auth: authSlice,
-  employeeDashboard: employeeDashboardSlice,
-  attendance: attendanceSlice,
 });
 
 const persistConfig = {

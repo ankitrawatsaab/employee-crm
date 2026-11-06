@@ -13,7 +13,6 @@ const FaceVerification = ({ onSuccess }) => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { punchIn } = usePunchIn();
 
   useEffect(() => {
     loadFaceModels()
@@ -64,11 +63,6 @@ const FaceVerification = ({ onSuccess }) => {
         return;
       }
       toast.success("Face verified successfully.");
-
-      const punchInSuccess = await punchIn();
-      if (punchInSuccess) {
-        onSuccess?.();
-      }
 
     } catch (error) {
       toast.error(error.response?.data?.message || "Face verification failed.");

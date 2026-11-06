@@ -4,6 +4,3 @@ export const ATTENDANCE_API_END_POINT = "https://employee-crm-dpa9.onrender.com/
 export const LEAVE_API_END_POINT = "https://employee-crm-dpa9.onrender.com/api/v1/leave";
 export const DASHBOARD_API_END_POINT = "https://employee-crm-dpa9.onrender.com/api/v1/dashboard";
 export const FACE_API_END_POINT = "https://employee-crm-dpa9.onrender.com/api/v1/face";
-export const PUNCH_IN_API_END_POINT = "https://employee-crm-dpa9.onrender.com/api/v1/attendance/punch-in";
-export const PUNCH_OUT_API_END_POINT = "https://employee-crm-dpa9.onrender.com/api/v1/attendance/punch-out";
-export const MY_ATTENDANCE_API_END_POINT ="https://employee-crm-dpa9.onrender.com/api/v1/attendance/my";
