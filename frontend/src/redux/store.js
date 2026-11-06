@@ -1,7 +1,5 @@
-import { persistStore, persistReducer } from "redux-persist";
-import { persistReducer, persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
+import {persistReducer,persistStore,FLUSH,REHYDRATE,PAUSE,PERSIST,PURGE,REGISTER} from "redux-persist";
 import storage from "redux-persist/lib/storage";
-
 import authSlice from "./authSlice.js";
 import employeeDashboardSlice from "./employeeDashboardSlice.js";
 import attendanceSlice from "./attendanceSlice.js";
@@ -29,5 +27,7 @@ export const store = configureStore({
       }
     }),
 });
+
+export const persistor = persistStore(store);
 
 export default store;
