@@ -3,6 +3,7 @@ import storage from "redux-persist/lib/storage";
 import authSlice from "./authSlice.js";
 import employeeDashboardSlice from "./employeeDashboardSlice.js";
 import attendanceSlice from "./attendanceSlice.js";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
   auth: authSlice,
