@@ -11,7 +11,7 @@ const useGetEmployeeDashboard = () => {
         const fetchEmployeeDashboard = async () => {
             try {
                 const res = await axios.get(`${DASHBOARD_API_END_POINT}`,{withCredentials: true,});
-                dispatch(setEmployeeDashboard(res.data));
+                dispatch(setEmployeeDashboard(res.data.dashboard));
             } catch (error) {
                 console.error(
                     "Error fetching employee dashboard:",

@@ -1,4 +1,3 @@
-
 import { Clock, LogIn, LogOut, CalendarCheck, X } from "lucide-react";
 import { useSelector } from "react-redux";
 import { useState } from "react";
