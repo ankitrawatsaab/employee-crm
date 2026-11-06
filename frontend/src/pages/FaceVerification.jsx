@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { loadFaceModels, getFaceDescriptor } from "../utils/faceUtils";
 import axios from "axios";
 import { toast } from "sonner";
-import usePunchIn from "../hooks/usePunchIn.jsx";
 import { FACE_API_END_POINT } from "../utils/constant.js";
 
 const FaceVerification = ({ onSuccess }) => {
