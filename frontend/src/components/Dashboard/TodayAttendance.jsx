@@ -1,9 +1,16 @@
 
-import { Clock, LogIn, LogOut, CalendarCheck } from "lucide-react";
+import { Clock, LogIn, LogOut, CalendarCheck, X } from "lucide-react";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import FaceVerification from "../../pages/FaceVerification.jsx";
 
 const TodayAttendance = ({ attendance }) => {
   const isPunchedIn = Boolean(attendance?.punchIn);
   const isPunchedOut = Boolean(attendance?.punchOut);
+
+  const loading = useSelector((state) => state.attendance.loading);
+
+  const [showFaceVerification, setShowFaceVerification] = useState(false);
 
   return (
     <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm sm:p-6">
@@ -78,11 +85,12 @@ const TodayAttendance = ({ attendance }) => {
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         {!isPunchedIn && (
           <button
-            disabled
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-medium text-white opacity-70 sm:w-auto"
+            onClick={() => setShowFaceVerification(true)}
+            disabled={loading}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-60 sm:w-auto"
           >
             <LogIn size={18} />
-            Punch In (Coming Soon)
+            Punch In
           </button>
         )}
 
@@ -103,6 +111,22 @@ const TodayAttendance = ({ attendance }) => {
           </div>
         )}
       </div>
+
+      {/* Face Verification Modal */}
+      {showFaceVerification && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="relative w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl">
+            <button
+              onClick={() => setShowFaceVerification(false)}
+              className="absolute right-4 top-4 text-gray-500 hover:text-gray-900"
+            >
+              <X size={20} />
+            </button>
+
+            <FaceVerification  onSuccess={() => setShowFaceVerification(false)}  />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,14 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { loadFaceModels, getFaceDescriptor } from "../utils/faceUtils";
 import axios from "axios";
+import { toast } from "sonner";
+import usePunchIn from "../hooks/usePunchIn.jsx";
+import { FACE_API_END_POINT } from "../utils/constant.js";
 
-const FaceVerification = () => {
+const FaceVerification = ({ onSuccess }) => {
   const videoRef = useRef(null);
   const streamRef = useRef(null);
 
   const [modelsLoaded, setModelsLoaded] = useState(false);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { punchIn } = usePunchIn();
 
   useEffect(() => {
     loadFaceModels()
@@ -48,15 +53,26 @@ const FaceVerification = () => {
         return;
       }
 
-      const { data } = await axios.post(`${FACE_API_END_POINT}/verify`, {
-        faceDescriptor,
-      });
-
-      setMessage(data.message);
-    } catch (error) {
-      setMessage(
-        error.response?.data?.message || "Face verification failed."
+      const { data } = await axios.post(`${FACE_API_END_POINT}/verify`,
+        { faceDescriptor },
+        { withCredentials: true }
       );
+
+      if (!data.verified) {
+        toast.error(data.message || "Face verification failed.");
+        setMessage(data.message || "Face verification failed.");
+        return;
+      }
+      toast.success("Face verified successfully.");
+
+      const punchInSuccess = await punchIn();
+      if (punchInSuccess) {
+        onSuccess?.();
+      }
+
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Face verification failed.");
+      setMessage(error.response?.data?.message || "Face verification failed.");
     } finally {
       setLoading(false);
     }
