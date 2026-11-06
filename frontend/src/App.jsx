@@ -23,10 +23,6 @@ const router = createBrowserRouter([
     path: "/face-verification",
     element: <FaceVerification />,
   },
-  {
-    path: "/employee/dashboard",
-    element: <EmployeeDashboard />,
-  },
 ]);
 
 
