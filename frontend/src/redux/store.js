@@ -10,13 +10,20 @@ import {
   REGISTER,
 } from "redux-persist";
 
-import storage from "redux-persist/lib/storage";
-
 import authSlice from "./authSlice.js";
 import employeeDashboardSlice from "./employeeDashboardSlice.js";
 import attendanceSlice from "./attendanceSlice.js";
 
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+
+// Custom localStorage adapter
+const storage = {
+  getItem: (key) => Promise.resolve(localStorage.getItem(key)),
+  setItem: (key, value) =>
+    Promise.resolve(localStorage.setItem(key, value)),
+  removeItem: (key) =>
+    Promise.resolve(localStorage.removeItem(key)),
+};
 
 const rootReducer = combineReducers({
   auth: authSlice,
@@ -26,7 +33,7 @@ const rootReducer = combineReducers({
 
 const persistConfig = {
   key: "root",
-  storage: storage,
+  storage,
   whitelist: ["auth", "employeeDashboard", "attendance"],
 };
 
